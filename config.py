@@ -1,10 +1,6 @@
 import os
 
-basedir = os.path.abspath(os.path.dirname(__file__))
-
 class Config:
-    SECRET_KEY = 'your_super_secret_key'  # You can set anything here or use os.urandom(24).hex()
-    
-    # SQLite Database
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'app.db')
+    SECRET_KEY = os.environ.get("SECRET_KEY")
+    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
     SQLALCHEMY_TRACK_MODIFICATIONS = False
