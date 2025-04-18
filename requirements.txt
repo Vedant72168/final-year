@@ -4,3 +4,4 @@ flask_login
 Werkzeug
 gunicorn
 pymysql
+psycopg2-binary
